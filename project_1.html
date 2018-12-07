@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="d3.min.js"></script>
+
+    <style type="text/css">
+
+			body {
+				text-align: center;
+			}
+
+			article {
+			    width: 50%;
+			    margin: 0 auto;
+			}
+
+			p {
+				font-size: 25px;
+			    text-align: left;
+			}
+
+			circle:hover {
+				fill: orange;
+				}
+
+		</style>
+
+  </head>
+  <body>
+  	<h1>Measuring Film Genres</h1>
+    <h2>Is It Possible To Quantify The Degree To Which A Film Is An Action?</h2>
+    <h3>By Oliver Gladfelter</h3>
+
+    <article>
+    	<p>Captain America is overweight. At a height of 6’1”, he weighs in at a hefty 240 pounds, 50 pounds heavier than expected for someone of that height. But this doesn’t mean the First Avenger needs to go on a diet. It means he’s the epitome of what society considers the ideal male body type.</p>
+	</article>
+
+	<script>
+		var bodySelection = d3.select("body");
+	 
+		var svgSelection = bodySelection.append("svg")
+	       .attr("width", 300)
+	       .attr("height", 50);
+	 
+		var circleSelection = svgSelection.append("circle")
+	       .attr("cx", 25)
+	       .attr("cy", 25)
+	      .attr("r", 25)
+	      .style("fill", "purple");
+
+	    var circleSelection2 = svgSelection.append("circle")
+	       .attr("cx", 150)
+	       .attr("cy", 25)
+	      .attr("r", 25)
+	      .style("fill", "blue");
+
+	    var circleSelection3 = svgSelection.append("circle")
+	       .attr("cx", 275)
+	       .attr("cy", 25)
+	      .attr("r", 25)
+	      .style("fill", "red");
+ 	</script>
+
+ 	<article>
+		<p id="color">More Text Goes Here, but also click me!</p>
+	</article>
+
+	<script>
+		d3.selectAll("p")
+				.on("click", function() {
+
+					//See which p was clicked
+					var paragraphID = d3.select(this).attr("id");
+
+					//Decide what to do next
+					if (paragraphID == "color") {
+
+						r = Math.random() * 255;
+						g = Math.random() * 255;
+						b = Math.random() * 255;
+
+						circleSelection.style("fill","rgb("+r+","+g+","+b+")");
+						
+						r = Math.random() * 255
+						g = Math.random() * 255
+						b = Math.random() * 255
+
+						circleSelection2.style("fill","rgb("+r+","+g+","+b+")");
+
+				    	r = Math.random() * 255
+						g = Math.random() * 255
+						b = Math.random() * 255
+
+						circleSelection3.style("fill","rgb("+r+","+g+","+b+")");
+
+						}});
+	</script>
+
+  </body>
+</html>
