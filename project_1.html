@@ -97,5 +97,49 @@
 						}});
 	</script>
 
+	<article>
+		<p><strong>Figure 1 - The "Most Horror" Films</strong></p>
+	</article>
+
+	<script>
+		//Width and height
+			var h = 250;
+			var w = 500;
+			var barPadding = 1;
+
+		var dataset = [1,.756, .533, .534, .515, .502];
+
+		var xScale = d3.scaleLinear()
+				.domain([0, d3.max(dataset, function(d) { return d; })])
+				.range([0, w]);
+			
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			svg.selectAll("rect")
+			   .data(dataset)
+			   .enter()
+			   .append("rect")
+			   .attr("y", function(d, i) {
+			   		return i * (h / dataset.length);
+			   })
+			   .attr("x", function(d) {
+			   		return 0;
+			   })
+			   .attr("height", h / dataset.length)
+			   .attr("width", function(d) {
+			   		return xScale(d);
+			   })
+			   .attr("fill", function(d) {
+					return "rgb(0, 0, " + Math.round(d * 255) + ")";
+			   });
+	</script>
+
+	<article>
+		<p>Last paragraph</p>
+	</article>
   </body>
 </html>
