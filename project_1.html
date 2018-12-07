@@ -19,9 +19,9 @@
 			    text-align: left;
 			}
 
-			circle:hover {
-				fill: orange;
-				}
+			h1{
+				font-size: 100px;
+			}
 
 		</style>
 
@@ -29,7 +29,7 @@
   <body>
   	<h1>Measuring Film Genres</h1>
     <h2>Is It Possible To Quantify The Degree To Which A Film Is An Action?</h2>
-    <h3>By Oliver Gladfelter</h3>
+    <h3>By <a href="https://www.ogladfelter.com/" target="_blank">Oliver Gladfelter</a></h3>
 
     <article>
     	<p>Captain America is overweight. At a height of 6’1”, he weighs in at a hefty 240 pounds, 50 pounds heavier than expected for someone of that height. But this doesn’t mean the First Avenger needs to go on a diet. It means he’s the epitome of what society considers the ideal male body type.</p>
@@ -46,19 +46,19 @@
 	       .attr("cx", 25)
 	       .attr("cy", 25)
 	      .attr("r", 25)
-	      .style("fill", "purple");
+	      .style("fill", "white");
 
 	    var circleSelection2 = svgSelection.append("circle")
 	       .attr("cx", 150)
 	       .attr("cy", 25)
 	      .attr("r", 25)
-	      .style("fill", "blue");
+	      .style("fill", "white");
 
 	    var circleSelection3 = svgSelection.append("circle")
 	       .attr("cx", 275)
 	       .attr("cy", 25)
 	      .attr("r", 25)
-	      .style("fill", "red");
+	      .style("fill", "white");
  	</script>
 
  	<article>
@@ -81,15 +81,16 @@
 
 						circleSelection.style("fill","rgb("+r+","+g+","+b+")");
 						
-						r = Math.random() * 255
-						g = Math.random() * 255
-						b = Math.random() * 255
+						//minus = Math.random() * 50
+						r = r - 50
+						g = g - 50
+						//b = Math.random() * 255
 
 						circleSelection2.style("fill","rgb("+r+","+g+","+b+")");
 
-				    	r = Math.random() * 255
-						g = Math.random() * 255
-						b = Math.random() * 255
+				    	r = r - 50
+						g = g - 50
+						//b = Math.random() * 255
 
 						circleSelection3.style("fill","rgb("+r+","+g+","+b+")");
 
