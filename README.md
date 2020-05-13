@@ -1,3 +1,3 @@
 # Measuring Film Genres
 
-Data and code behind this project: https://cultureplot.com/film-genres/
+Data collection and calculations for this project: https://cultureplot.com/film-genres/
